@@ -1,0 +1,79 @@
+# Credentials & Secrets (CRITICAL)
+.gemini_key.txt
+.env
+.env.*
+*.key
+*.token
+
+# Python & Bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Playwright Browsers & Cache
+.playwright/
+test-results/
+playwright-report/
+
+# Chrome Debug Profile (Temporary CDP User Data)
+chrome_debug_profile/
+chrome_debug_profile*/
+
+# Runtime Logs, Dumps & Telemetry
+*.log
+diagnostics.log
+*.jsonl
+automation_run.jsonl
+pw_live_dump.html
+dom_report.html
+dom_report.json
+report_dump.json
+current_affairs_solutions.json
+wrong_questions_details.json
+incorrect_ca_analysis.json
+live_exam_screen.png
+q_images/
+
+# Testing & Coverage
+.coverage
+.coverage.*
+.pytest_cache/
+htmlcov/
+
+# PyInstaller & Windows Build Artifacts
+*.manifest
+*.spec.bak
+packaging/dist/
+packaging/build/
+
+# IDE & OS Files
+.vscode/
+.idea/
+*.swp
+*.swo
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store

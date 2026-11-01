@@ -1,0 +1,10 @@
+-r requirements.txt
+
+# Testing & Quality
+pytest>=7.4.0
+pytest-cov>=4.1.0
+
+# Windows Packaging & Releases
+pyinstaller>=6.3.0
+wheel>=0.42.0
+build>=1.0.0
