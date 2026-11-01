@@ -1,5 +1,5 @@
 """
-dashboard.py - Real-Time Visual Automation Dashboard & Remote Solver for PW Online Exams
+dashboard.py - TestPilot: Real-Time Visual Automation Dashboard & Remote Solver
 Features:
 - Modern Light Theme UI (Linear / Apple design system).
 - Live on-screen floating HUD overlay injected onto Chrome exam tab.
@@ -58,7 +58,7 @@ def get_cached_cdp_endpoint(ttl: float = 1.5):
         _last_cdp_check = now
     return _cached_cdp_result
 
-app = FastAPI(title="Chrome Question Automation Dashboard")
+app = FastAPI(title="TestPilot")
 
 def load_saved_key() -> str:
     if os.path.exists(".gemini_key.txt"):
@@ -247,10 +247,10 @@ def update_screen_overlay_hud(page, status: str, q_num: Any = "-", answer: str =
     """Injects or updates the on-screen live telemetry HUD widget directly onto the active Chrome exam page."""
     js = """
     (data) => {
-        let hud = document.getElementById('gemini-solver-hud');
+        let hud = document.getElementById('testpilot-hud');
         if (!hud) {
             hud = document.createElement('div');
-            hud.id = 'gemini-solver-hud';
+            hud.id = 'testpilot-hud';
             hud.style.cssText = `
                 position: fixed;
                 top: 20px;
@@ -305,6 +305,7 @@ def update_screen_overlay_hud(page, status: str, q_num: Any = "-", answer: str =
                     <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.5px; color: #334155; text-transform: uppercase;">${statusText}</span>
                 </div>
                 <div style="display: flex; align-items: center; gap: 6px;">
+                    <span style="font-size: 10px; font-weight: 800; color: #4f46e5; background: #eef2ff; padding: 2px 6px; border-radius: 4px;">TESTPILOT</span>
                     <span style="font-size: 11px; font-weight: 600; color: #64748b; background: #e2e8f0; padding: 2px 7px; border-radius: 999px;">Q#${qNum}</span>
                 </div>
             </div>
@@ -950,7 +951,7 @@ DASHBOARD_HTML = """<!DOCTYPE html>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gemini Vision Solver - Live Exam Dashboard</title>
+  <title>TestPilot</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
@@ -979,10 +980,10 @@ DASHBOARD_HTML = """<!DOCTYPE html>
           </div>
           <div>
             <h1 class="text-base font-bold tracking-tight text-slate-900 flex items-center gap-2">
-              Gemini Vision Exam Solver
-              <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-indigo-50 text-indigo-700 border border-indigo-200">PRO HUD</span>
+              TestPilot
+              <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-indigo-50 text-indigo-700 border border-indigo-200">Live</span>
             </h1>
-            <p class="text-[11px] text-slate-500 font-medium">PhysicsWallah CDP Live Telemetry & Anti-Trap AI</p>
+            <p class="text-[11px] text-slate-500 font-medium">CDP Automation & Vision AI</p>
           </div>
         </div>
 
@@ -1677,14 +1678,14 @@ def index():
     return DASHBOARD_HTML
 
 def main():
-    parser = argparse.ArgumentParser(description="Live Exam Question Solver Dashboard")
+    parser = argparse.ArgumentParser(description="TestPilot - Live Automation Dashboard")
     parser.add_argument("--port", type=int, default=8000, help="Port to bind dashboard server to")
     parser.add_argument("--host", type=str, default="127.0.0.1", help="Host interface")
     parser.add_argument("--no-open", action="store_true", help="Do not automatically open browser on start")
     args = parser.parse_args()
 
     url = f"http://{args.host}:{args.port}"
-    logger.info(f"Starting Live Question Solver Dashboard at {url}")
+    logger.info(f"Starting TestPilot at {url}")
 
     if not args.no_open:
         threading.Timer(1.0, lambda: webbrowser.open(url)).start()

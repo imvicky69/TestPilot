@@ -1,9 +1,9 @@
 @echo off
 setlocal
-title Exam Solver - Live Web Dashboard
+title TestPilot - Live Web Dashboard
 
 echo ===================================================================
-echo [Exam Solver Dashboard] Initializing Web Server & Automation Engine
+echo [TestPilot] Initializing Web Server & Automation Engine
 echo ===================================================================
 
 cd /d "%~dp0\.."
@@ -21,3 +21,4 @@ python dashboard.py --port 8000
 
 pause
 endlocal
+

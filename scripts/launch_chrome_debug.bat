@@ -1,9 +1,9 @@
 @echo off
 setlocal
-title Launch Chrome with Remote Debugging (Port 9222)
+title TestPilot - Launch Chrome with Remote Debugging (Port 9222)
 
 echo ===================================================================
-echo [Chrome CDP Launcher] Starting Google Chrome with Remote Debugging...
+echo [TestPilot] Starting Google Chrome with Remote Debugging...
 echo ===================================================================
 
 set "CHROME_PATH="
@@ -34,3 +34,4 @@ start "" "%CHROME_PATH%" --remote-debugging-port=9222 --user-data-dir="%USER_DAT
 
 echo [SUCCESS] Chrome launched on port 9222.
 endlocal
+

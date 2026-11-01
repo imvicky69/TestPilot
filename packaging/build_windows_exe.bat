@@ -1,9 +1,9 @@
 @echo off
 setlocal enabledelayedexpansion
-title Build Windows Executable - Exam Solver
+title Build Windows Executable - TestPilot
 
 echo ===================================================================
-echo [Exam Solver Build Engine] Compiling Standalone Windows Executable
+echo [TestPilot Build Engine] Compiling Standalone Windows Executable
 echo ===================================================================
 
 cd /d "%~dp0\.."
@@ -40,7 +40,8 @@ if errorlevel 1 (
 echo.
 echo ===================================================================
 echo [SUCCESS] Build finished successfully!
-echo Executable location: dist\ExamSolverDashboard.exe
+echo Executable location: dist\TestPilot.exe
 echo ===================================================================
 pause
 endlocal
+

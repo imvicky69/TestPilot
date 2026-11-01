@@ -42,20 +42,21 @@ jobs:
         shell: pwsh
         run: |
           New-Item -ItemType Directory -Force -Path release
-          Copy-Item dist/ExamSolverDashboard.exe release/
+          Copy-Item dist/TestPilot.exe release/
           Copy-Item scripts/*.bat release/
           Copy-Item README.md release/
           Copy-Item LICENSE release/
-          Compress-Archive -Path release/* -DestinationPath ExamSolver-Windows-x64.zip
+          Compress-Archive -Path release/* -DestinationPath TestPilot-Windows-x64.zip
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         if: startsWith(github.ref, 'refs/tags/')
         with:
-          files: ExamSolver-Windows-x64.zip
+          files: TestPilot-Windows-x64.zip
           name: Release ${{ github.ref_name }}
           draft: false
           prerelease: false
           generate_release_notes: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+

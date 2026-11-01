@@ -72,7 +72,7 @@ class MainWindow(QMainWindow):
 
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("Chrome DOM Inspection & Diagnostic Tool")
+        self.setWindowTitle("TestPilot - Diagnostic Suite & Solver")
         self.resize(1200, 800)
         self.last_results: Optional[Dict[str, Any]] = None
         self.worker: Optional[DiagnosticWorker] = None

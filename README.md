@@ -1,25 +1,25 @@
-# Chrome DOM Inspection, Diagnostic & Exam Solver System
+# TestPilot
 
 [![Tests](https://img.shields.io/badge/tests-passing-brightgreen.svg)](tests/)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Platform: Windows](https://img.shields.io/badge/platform-Windows%20%7C%20Cross--Platform-lightgrey.svg)]()
 
-A high-performance Python system for Chrome DOM inspection, visual accessibility auditing, and automated competitive exam testing via Google Chrome DevTools Protocol (CDP) and Google Gemini Vision AI.
+**TestPilot** is a high-performance Python automation system for Chrome DOM inspection, visual accessibility auditing, and automated competitive exam testing via Google Chrome DevTools Protocol (CDP) and Google Gemini Vision AI.
 
 ---
 
 ## 🌟 Key Capabilities
 
 ### 1. Modern Light Theme Live Dashboard (`dashboard.py`)
-- **Clean UI Design**: Modern Apple/Linear design system featuring clean typography, light neutral palettes, subtle borders, and smooth transitions.
+- **TestPilot UI**: Modern Apple/Linear design system featuring clean typography, light neutral palettes, subtle borders, and smooth transitions.
 - **Auto Tab Discovery**: Automatically enumerates open CDP targets, detects test sessions (`pw.live/practice-v2`), and binds with 1 click.
 - **Vision Inference & Reasoning Engine**: Submits high-resolution stem images to Gemini Vision (`gemini-flash-lite-latest` default for ~1.8s sub-second latency) requesting strict structured JSON (`answer: A|B|C|D`, `confidence: HIGH|MEDIUM|LOW`, step-by-step reasoning).
 - **Anti-Trap Competitive Exam Reasoning**: Specialized prompts tailored for multi-statement questions, checking exact rocket/missile nomenclature, enactment vs amendment dates, beneficiary vs co-investor distinctions, extreme qualifiers, and statement counting traps.
 - **Fail-Safe DOM Execution**: Native Playwright CDP locator clicking with smooth viewport centering and verified DOM state confirmation before submitting answers.
 
 ### 2. Live On-Screen HUD Overlay & Question Palette Tracking
-- **In-Browser Floating Overlay**: Injects a live HUD overlay directly onto the active exam tab displaying solving state, current question number, model latency, and countdown pacing.
+- **TestPilot In-Browser HUD**: Injects a live HUD overlay directly onto the active exam tab displaying solving state, current question number, model latency, and countdown pacing.
 - **DOM Question Palette Tracking**: Real-time inspection of test navigation chips, tracking:
   - Total Questions
   - Questions Answered (Green)
@@ -41,14 +41,14 @@ A high-performance Python system for Chrome DOM inspection, visual accessibility
 sandBox/
 ├── .github/
 │   └── workflows/
-│       └── build_release.yml      # Automated GitHub Actions workflow for Windows .exe releases
+│       └── build_release.yml      # Automated GitHub Actions workflow for Windows TestPilot.exe releases
 ├── packaging/
-│   ├── pyinstaller.spec           # PyInstaller build specification
+│   ├── pyinstaller.spec           # PyInstaller build specification (TestPilot.exe)
 │   └── build_windows_exe.bat      # 1-click script to compile Windows executable
 ├── scripts/
 │   ├── launch_chrome_debug.bat    # 1-click script to start Chrome on port 9222
-│   ├── run_dashboard.bat          # 1-click script to launch the Live Dashboard (port 8000)
-│   ├── run_gui.bat                # 1-click script to launch the desktop GUI
+│   ├── run_dashboard.bat          # 1-click script to launch TestPilot Dashboard (port 8000)
+│   ├── run_gui.bat                # 1-click script to launch TestPilot desktop GUI
 │   └── run_diagnostics.bat        # 1-click script to run CDP diagnostics
 ├── tests/
 │   ├── __init__.py
@@ -64,7 +64,7 @@ sandBox/
 ├── main.py                        # CLI entrypoint and diagnostic orchestrator
 ├── report_generator.py            # JSON and HTML report renderer
 ├── test_automation.py             # Headless question solver CLI worker
-├── pyproject.toml                 # PEP 621 packaging metadata & CLI commands
+├── pyproject.toml                 # PEP 621 packaging metadata & CLI commands (testpilot)
 ├── requirements.txt               # Production dependencies
 ├── requirements-dev.txt           # Development, test, and packaging dependencies
 ├── .gitignore                     # Git ignore rules (protects API keys, dumps, logs)
@@ -97,7 +97,7 @@ scripts\launch_chrome_debug.bat
 ```
 Navigate to your exam session on the opened Chrome window.
 
-### 4. Start the Live Dashboard
+### 4. Start TestPilot Dashboard
 Double-click `scripts\run_dashboard.bat`, or run:
 ```bash
 python dashboard.py --port 8000
@@ -131,7 +131,7 @@ To compile a standalone Windows `.exe` locally:
 ```cmd
 packaging\build_windows_exe.bat
 ```
-The output executable will be placed in `dist\ExamSolverDashboard.exe`.
+The output executable will be placed in `dist\TestPilot.exe`.
 
 ### Automated GitHub Releases
 The repository includes a GitHub Actions release pipeline (`.github/workflows/build_release.yml`).
@@ -140,7 +140,7 @@ To publish a new Windows release:
 git tag v1.0.0
 git push origin v1.0.0
 ```
-GitHub Actions will automatically run the test suite, compile the executable on `windows-latest`, package it into `ExamSolver-Windows-x64.zip`, and publish the release on GitHub.
+GitHub Actions will automatically run the test suite, compile the executable on `windows-latest`, package it into `TestPilot-Windows-x64.zip`, and publish the release on GitHub.
 
 ---
 

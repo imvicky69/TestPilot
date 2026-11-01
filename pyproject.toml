@@ -3,16 +3,17 @@ requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "gemini-exam-solver"
+name = "testpilot"
 version = "1.0.0"
-description = "Automated Exam Question Solver & Live Telemetry Dashboard via Chrome CDP and Gemini Multimodal Vision AI"
+description = "TestPilot - Autonomous Browser DOM Inspection, Live Diagnostics & Visual AI Solver"
 readme = "README.md"
 requires-python = ">=3.9"
 license = { text = "MIT" }
 authors = [
-    { name = "Gemini Exam Solver Team" }
+    { name = "TestPilot Team" }
 ]
 keywords = [
+    "testpilot",
     "exam-solver",
     "chrome-cdp",
     "playwright",
@@ -59,9 +60,11 @@ dev = [
 ]
 
 [project.scripts]
+testpilot = "main:main"
+testpilot-dashboard = "dashboard:main"
+testpilot-gui = "gui:main"
 exam-solver = "main:main"
 exam-dashboard = "dashboard:main"
-exam-gui = "gui:main"
 
 [tool.setuptools]
 py-modules = [
@@ -82,3 +85,4 @@ testpaths = ["tests"]
 python_files = ["test_*.py"]
 python_classes = ["Test*"]
 python_functions = ["test_*"]
+

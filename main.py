@@ -310,7 +310,7 @@ def run_demo(output_dir: str = "."):
 def main():
     """Main CLI entrypoint."""
     parser = argparse.ArgumentParser(
-        description="Chrome DOM Inspection & Diagnostic Utility - Authorized testing & inspection tool."
+        description="TestPilot - Chrome DOM Inspection & Diagnostic Utility"
     )
     parser.add_argument("--port", type=int, default=9222, help="Chrome CDP port (default: 9222)")
     parser.add_argument("--host", type=str, default="127.0.0.1", help="Chrome CDP host (default: 127.0.0.1)")

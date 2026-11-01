@@ -1,6 +1,6 @@
 # -*- mode: python ; coding: utf-8 -*-
 """
-pyinstaller.spec - Windows Executable Build Configuration for Exam Solver Dashboard
+pyinstaller.spec - Windows Executable Build Configuration for TestPilot
 """
 
 import sys
@@ -60,7 +60,7 @@ exe = EXE(
     a.zipfiles,
     a.datas,
     [],
-    name='ExamSolverDashboard',
+    name='TestPilot',
     debug=False,
     bootloader_ignore_signals=False,
     strip=False,
@@ -75,3 +75,4 @@ exe = EXE(
     entitlements_file=None,
     icon=None,
 )
+

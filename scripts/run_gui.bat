@@ -1,9 +1,9 @@
 @echo off
 setlocal
-title Exam Solver - Desktop GUI
+title TestPilot - Desktop GUI
 
 echo ===================================================================
-echo [Exam Solver GUI] Starting Desktop Interface...
+echo [TestPilot] Starting Desktop Interface...
 echo ===================================================================
 
 cd /d "%~dp0\.."
@@ -19,3 +19,4 @@ python main.py --gui
 
 pause
 endlocal
+
