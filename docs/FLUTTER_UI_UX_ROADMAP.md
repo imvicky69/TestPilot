@@ -202,3 +202,4 @@ flowchart LR
 - Compile Python backend to `bin/engine/testpilot_engine.exe` via PyInstaller.
 - Bundle Python executable within Flutter's Windows build output folder (`build/windows/runner/Release/`).
 - Create an automated **Inno Setup script** to produce a single `TestPilotSetup.exe` installer for end users with zero prerequisite installations.
+

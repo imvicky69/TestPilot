@@ -42,6 +42,15 @@ sandBox/
 ├── .github/
 │   └── workflows/
 │       └── build_release.yml      # Automated GitHub Actions workflow for Windows TestPilot.exe releases
+├── diagnostics/                   # Modular site analysis toolkit (for inspecting arbitrary exam platforms)
+│   ├── __init__.py                # Package exports (DOMInspector, ReportGenerator, etc.)
+│   ├── dom_inspector.py           # Deep DOM hierarchy & interactive element extractor
+│   ├── image_analyzer.py          # Visual structure, question modalities (Image/Canvas/SVG)
+│   ├── accessibility_inspector.py # CDP accessibility tree audit (AXTree)
+│   ├── report_generator.py        # Compiles dom_report.json & interactive dom_report.html
+│   └── demo_server.py             # Local synthetic assessment server for offline verification
+├── docs/
+│   └── FLUTTER_UI_UX_ROADMAP.md   # Architectural roadmap for native Flutter desktop app
 ├── packaging/
 │   ├── pyinstaller.spec           # PyInstaller build specification (TestPilot.exe)
 │   └── build_windows_exe.bat      # 1-click script to compile Windows executable
@@ -54,15 +63,10 @@ sandBox/
 │   ├── __init__.py
 │   ├── test_diagnostics.py        # End-to-end integration and DOM unit tests (100% PASS)
 │   └── test_solver.py             # Solver option mapping & schema tests
-├── accessibility_inspector.py     # CDP accessibility tree inspection
-├── chrome_connector.py            # Chrome process detector & CDP connector
-├── dashboard.py                   # FastAPI + Uvicorn real-time live solver dashboard
-├── demo_server.py                 # Mock assessment server for offline testing
-├── dom_inspector.py               # DOM structure, interactive elements & metrics
+├── chrome_connector.py            # Chrome process detector & CDP session controller
+├── dashboard.py                   # TestPilot FastAPI + Uvicorn real-time live solver dashboard
 ├── gui.py                         # PySide6 desktop GUI interface
-├── image_analyzer.py              # Visual structure & question modality detection
 ├── main.py                        # CLI entrypoint and diagnostic orchestrator
-├── report_generator.py            # JSON and HTML report renderer
 ├── test_automation.py             # Headless question solver CLI worker
 ├── pyproject.toml                 # PEP 621 packaging metadata & CLI commands (testpilot)
 ├── requirements.txt               # Production dependencies

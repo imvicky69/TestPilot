@@ -21,10 +21,8 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")
 from bs4 import BeautifulSoup
 
 from chrome_connector import check_cdp_endpoint, detect_chrome_processes
-from demo_server import DEMO_HTML, start_demo_server
-from dom_inspector import DOMInspector
+from diagnostics import DEMO_HTML, DOMInspector, ReportGenerator, start_demo_server
 from main import run_diagnostics
-from report_generator import ReportGenerator
 
 
 class TestChromeConnector(unittest.TestCase):

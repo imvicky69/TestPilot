@@ -383,7 +383,7 @@ class MainWindow(QMainWindow):
 
     def run_demo_mode(self):
         """Run self-contained demo test."""
-        from demo_server import start_demo_server
+        from diagnostics import start_demo_server
         self.lbl_report_status.setText("Starting local demo assessment server...")
         server, demo_url = start_demo_server(port=8765)
         self._start_diagnostic_worker("127.0.0.1", 9222, 0, launch_fallback=True, navigate_url=demo_url)

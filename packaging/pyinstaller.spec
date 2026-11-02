@@ -28,6 +28,7 @@ hidden_imports = [
     'rich',
     'psutil',
     'PIL',
+    'diagnostics',
 ]
 
 datas = [

@@ -67,17 +67,13 @@ exam-solver = "main:main"
 exam-dashboard = "dashboard:main"
 
 [tool.setuptools]
+packages = ["diagnostics"]
 py-modules = [
     "main",
     "dashboard",
     "gui",
     "test_automation",
     "chrome_connector",
-    "dom_inspector",
-    "image_analyzer",
-    "accessibility_inspector",
-    "report_generator",
-    "demo_server",
 ]
 
 [tool.pytest.ini_options]

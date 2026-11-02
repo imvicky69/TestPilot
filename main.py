@@ -31,11 +31,14 @@ from rich.console import Console
 from rich.panel import Panel
 from rich.table import Table
 
-from accessibility_inspector import AccessibilityInspector
 from chrome_connector import ChromeConnectionError, ChromeConnector, check_cdp_endpoint, detect_chrome_processes
-from dom_inspector import DOMInspector
-from image_analyzer import ImageAnalyzer
-from report_generator import ReportGenerator
+from diagnostics import (
+    AccessibilityInspector,
+    DOMInspector,
+    ImageAnalyzer,
+    ReportGenerator,
+    start_demo_server,
+)
 
 console = Console(highlight=False, legacy_windows=False)
 
@@ -285,8 +288,6 @@ def launch_debug_chrome(port: int = 9222):
 
 def run_demo(output_dir: str = "."):
     """Run an automated demo test against the built-in assessment server."""
-    from demo_server import start_demo_server
-
     console.print("[bold cyan]Starting built-in assessment demo server...[/bold cyan]")
     server, demo_url = start_demo_server(port=8765)
     console.print(f"[green]Demo server listening at {demo_url}[/green]")
