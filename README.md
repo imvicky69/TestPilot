@@ -144,6 +144,13 @@ GitHub Actions will automatically run the test suite, compile the executable on 
 
 ---
 
+## 🗺️ Future UI/UX Roadmap (Flutter Desktop)
+
+A complete architectural specification and design guide for evolving TestPilot into a native Windows 11 desktop application with a floating companion HUD, Fluent UI design system, and deep telemetry is available in:
+- [Flutter Windows & UI/UX Architectural Roadmap](docs/FLUTTER_UI_UX_ROADMAP.md)
+
+---
+
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
